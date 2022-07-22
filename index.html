@@ -8,13 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    
-        <!-- <input type="number" name="countryCode" id="">
-        <input type="phoneNumber" name="" id="phoneNumber" onkeyup = "phoneNumberChangeHandler()">
-        <label for="" id="warningLabel">
-        </label> -->
-
-        <header>
+ <header>
             <h2>LOGONAME</h2>
             <button>CONTACT US</button>
         </header>
@@ -29,12 +23,15 @@
                 <div class="inputDiv">
                     <div class="dropdownMain">
                         <img src="./Assets/Images/nigeria.svg" alt="">
-                        <i class="fa-solid fa-angle-down"></i>
+                        <i class="fa-solid fa-angle-down" onclick="dropdownToggleHandler()" id="angleDown" ></i>
                     </div>
                     <input type="text" placeholder="+234 903 876 1241" id="phoneNumber" onkeyup = "phoneNumberChangeHandler()">
                     <div class="networkProvider">
-                        <!-- <img src="./Assets/Images/MTN logo.svg" alt="" /> -->
                     </div>
+
+                    <div class="dropdown" id = "dropdown">
+                    </div>
+                    <span id="validationAlert">This number is not valid*</span>
                 </div>
 
                 <footer>
@@ -42,7 +39,9 @@
                     <img src="./Assets/Images/network footer.svg" alt="">
                 </footer>
             </div>
-            <div class="rightSection"></div>
+            <div class="rightSection">
+                <img src="./Assets/Images/networkID.svg" alt="Id Image">
+            </div>
     </div>
     
     
