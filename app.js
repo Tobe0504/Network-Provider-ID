@@ -90,21 +90,62 @@ function dropdownToggleHandler() {
 
   dropdown.classList.toggle("active");
   angleDown.classList.toggle("active");
-
-  console.log(display);
 }
 
-const counteries = [
-  { title: "Ghana" },
-  { title: "Nigeria" },
-  { title: "Togo" },
-  { title: "South Africa" },
+let counteries = [
+  {
+    title: "Ghana",
+    flag: "./Assets/Icons/flag-icons-main/flags/1x1/gh.svg",
+    isActive: false,
+  },
+  {
+    title: "Nigeria",
+    flag: "./Assets/Icons/flag-icons-main/flags/1x1/ng.svg",
+    isActive: false,
+  },
+  {
+    title: "Togo",
+    flag: "./Assets/Icons/flag-icons-main/flags/1x1/tg.svg",
+    isActive: false,
+  },
+  {
+    title: "South Africa",
+    flag: "./Assets/Icons/flag-icons-main/flags/1x1/za.svg",
+    isActive: false,
+  },
 ];
 
 const country = counteries
-  .map((data) => {
-    return `<div>${data.title}</div>`;
+  .map((data, i) => {
+    return `<div onclick = activeChangeHandler(${i})>
+    <img src = ${data.flag} />
+    <p>${data.title}</p>
+    </div>`;
   })
   .join("");
 
 dropdown.innerHTML = country;
+
+function activeChangeHandler(index) {
+  const countryCopy = counteries.map((data, i) => {
+    if (index === i) {
+      return { ...data, isActive: true };
+    }
+    return { ...data, isActive: false };
+  });
+
+  counteries = countryCopy;
+  console.log(counteries);
+
+  if (counteries[index].isActive) {
+    const activeFlag = counteries[index].flag;
+    const newImg = `<img src=${activeFlag} id="countryFlag" />`;
+    console.log(newImg);
+    document.getElementById("dropdownMainInner").innerHTML = newImg;
+  }
+}
+
+const dropDownMain = document
+  .getElementById("dropdownMain")
+  .querySelector("img:nth-child(1)");
+console.log(dropDownMain);
