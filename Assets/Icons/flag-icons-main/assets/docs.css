@@ -49,7 +49,7 @@ h2 {
 
 .flag-img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  /* aspect-ratio: 4 / 3; */
   border: 1px solid #e9ecef;
   border-radius: 2px;
   overflow: hidden;
@@ -57,7 +57,7 @@ h2 {
 
 .flag-img-square {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  /* aspect-ratio: 1 / 1; */
   border: 1px solid #e9ecef;
   border-radius: 2px;
   overflow: hidden;
